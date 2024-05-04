@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Test Blog | Jason&#39;s Blog</title>
+  <title>Setting Up A Personal Blog With Hexo | Jason&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Testing I would like to use this blog page to share my job searching journey.">
+  <meta name="description" content="As an aspiring software engineer, I always think it’s crucial to have my own personal website to showcase what I’ve done.However, everytime when I sat down and tried to start building it, I got distra">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test Blog">
+<meta property="og:title" content="Setting Up A Personal Blog With Hexo">
 <meta property="og:url" content="http://jsonwang95.github.io/2024/05/04/Test-Blog/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="Testing I would like to use this blog page to share my job searching journey.">
+<meta property="og:description" content="As an aspiring software engineer, I always think it’s crucial to have my own personal website to showcase what I’ve done.However, everytime when I sat down and tried to start building it, I got distra">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-04T18:29:30.000Z">
-<meta property="article:modified_time" content="2024-05-04T21:33:05.330Z">
+<meta property="article:modified_time" content="2024-05-04T22:16:50.039Z">
 <meta property="article:author" content="Jason Wang">
 <meta name="twitter:card" content="summary">
   
@@ -89,7 +89,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Test Blog
+      Setting Up A Personal Blog With Hexo
     </h1>
   
 
@@ -97,13 +97,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Testing</p>
-<p>I would like to use this blog page to share my job searching journey.</p>
+        <p>As an aspiring software engineer, I always think it’s crucial to have my own personal website to showcase what I’ve done.<br>However, everytime when I sat down and tried to start building it, I got distracted thinking about too many features I’d like to have for my website.<br>After reading a book called “Atomic Habit”, which I believe a lot of people have heard about, I decided to just start with a smaller goal. I came accross a<br>few tutorials about building a blog with a simple tool called “Hexo”, and I thought it was a good place to start. It’s really simple to setup, and I’ll<br>just cover a few problems that you might run into, and also some side notes that I think is good to know.</p>
+<p>1.<br>When you’re deploying the website to github, you’re gonna have to modify the “_config.yml” file that’s in the root directory.<br>You’ll have to specify, “type”, “repo”, and “branch”. In the tutorials I found, they told us to specify the “branch” to be “master”. This might give you<br>some problems because GitHub actually changed the default branch to be “main”. So if you set the “branch” to be master, you’re gonna find out that your hexo files<br>are not being pushed to the main branch, and thus you’re actually not gonna see what you expect on your website. Now, I’m not going to talk too much about branches because it’s a big topic, but essentially there isn’t that much of a difference between main and master branch, at least for us. </p>
+<p>TL;DR<br>Just make sure to set “branch” to be main, and you should be good to go.</p>
+<ol start="2">
+<li>In the tutorials, they all mention this command “hexo clean”. The only explanation they give is that it’s gonna clean up all the cache and the static pages that<br>were generated. That didn’t make any sense to me. But basically, it’s a command that can reset and clean up your development environment. Ok but what does this mean still? Well think of it this way. Most people use Hexo to build a blog page right? So during the process, everytime time you open a file you’re going to create some other files under the hood. And say you decide to delete some older posts, the related files might still be there hanging around. This is where “hexo clean” come into handy. You can think of it as a good practice when you’re working with hexo projects. Run it everytime before you post something new and it will help keeping your stuff nice and clean.</li>
+</ol>
+<p>Also yes, it’s safe to run that command at any given time, and it won’t accidently delete any of your posts.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jsonwang95.github.io/2024/05/04/Test-Blog/" data-id="clvsms2qr0000efqt6wxx0yua" data-title="Test Blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://jsonwang95.github.io/2024/05/04/Test-Blog/" data-id="clvsnz0pb0000c5qt53xq5cw2" data-title="Setting Up A Personal Blog With Hexo" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -154,7 +159,7 @@
       <ul>
         
           <li>
-            <a href="/2024/05/04/Test-Blog/">Test Blog</a>
+            <a href="/2024/05/04/Test-Blog/">Setting Up A Personal Blog With Hexo</a>
           </li>
         
           <li>
