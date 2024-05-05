@@ -1,5 +1,5 @@
 ---
-title: Setting Up A Personal Blog With Hexo
+title: Setting Up A Personal Blog With Hexo (Small nuance problems you might run into)
 date: 2024-05-04 11:29:30
 tags:
 ---
@@ -19,5 +19,9 @@ Ensure you set the `branch` to "main" to avoid any issues.
 The tutorials often mention the command `hexo clean`, explaining only that it clears all cache and the static pages that were generated. This explanation was confusing to me at first. Essentially, `hexo clean` is a command that resets and cleans up your development environment. Think of it this way: most people use Hexo to build a blog, right? During the building process, every time you open a file, Hexo creates several other files under the hood. If you decide to delete some older posts, the related files might still linger. Here's where `hexo clean` becomes useful—it's considered good practice to run it before posting something new to keep your project tidy and organized.
 
 Also, yes, it's safe to run this command at any time, and it won't accidentally delete any of your posts.
+
+
+### 3. Finishing up the github setup
+If you follow the tutorials, you should be able to have the basic funtions of your hexo site working, which is publishing posts and updating them. However, you might have noticed that not all your files are being pushed to your github repo. Why is that the case? Didn't we create a github repo and update the deployment setting in the `_config.yml`file? In fact, by doing so, we're only partially done with the github setup. When we run `hexo deploy`, we're only pusing the generated static files in the `public` directory. Thus, we still have to do the git commands on our own should you wish to have them all on your github repo. 
 
 ---
