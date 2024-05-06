@@ -28,7 +28,7 @@
 <meta property="og:description" content="As an aspiring software engineer, I believe it’s crucial to have my own personal website to showcase my projects.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-04T18:29:30.000Z">
-<meta property="article:modified_time" content="2024-05-05T19:01:17.621Z">
+<meta property="article:modified_time" content="2024-05-06T00:57:38.722Z">
 <meta property="article:author" content="Jason Wang">
 <meta name="twitter:card" content="summary">
 
@@ -118,6 +118,11 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -181,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-05 12:01:17" itemprop="dateModified" datetime="2024-05-05T12:01:17-07:00">2024-05-05</time>
+                <time title="Modified: 2024-05-05 17:57:38" itemprop="dateModified" datetime="2024-05-05T17:57:38-07:00">2024-05-05</time>
               </span>
 
           
@@ -202,7 +207,10 @@
 <p><strong>TL;DR:</strong><br>Ensure you set the <code>branch</code> to “main” to avoid any issues.</p>
 <h3 id="2-Understanding-the-hexo-clean-Command"><a href="#2-Understanding-the-hexo-clean-Command" class="headerlink" title="2. Understanding the hexo clean Command"></a>2. Understanding the <code>hexo clean</code> Command</h3><p>The tutorials often mention the command <code>hexo clean</code>, explaining only that it clears all cache and the static pages that were generated. This explanation was confusing to me at first. Essentially, <code>hexo clean</code> is a command that resets and cleans up your development environment. Think of it this way: most people use Hexo to build a blog, right? During the building process, every time you open a file, Hexo creates several other files under the hood. If you decide to delete some older posts, the related files might still linger. Here’s where <code>hexo clean</code> becomes useful—it’s considered good practice to run it before posting something new to keep your project tidy and organized.</p>
 <p>Also, yes, it’s safe to run this command at any time, and it won’t accidentally delete any of your posts.</p>
-<h3 id="3-Finishing-up-the-github-setup"><a href="#3-Finishing-up-the-github-setup" class="headerlink" title="3. Finishing up the github setup"></a>3. Finishing up the github setup</h3><p>If you follow the tutorials, you should be able to have the basic funtions of your hexo site working, which is publishing posts and updating them. However, you might have noticed that not all your files are being pushed to your github repo. Why is that the case? Didn’t we create a github repo and update the deployment setting in the <code>_config.yml</code>file? In fact, by doing so, we’re only partially done with the github setup. When we run <code>hexo deploy</code>, we’re only pusing the generated static files in the <code>public</code> directory. Thus, we still have to do the git commands on our own should you wish to have them all on your github repo. </p>
+<h3 id="3-Finishing-up-the-github-setup"><a href="#3-Finishing-up-the-github-setup" class="headerlink" title="3. Finishing up the github setup"></a>3. Finishing up the github setup</h3><p>If you follow the tutorials, you should be able to have the basic funtions of your hexo site working, which is publishing posts and updating them. However, you might have noticed that not all your files are being pushed to your github repo. Why is that the case? Didn’t we create a github repo and update the deployment setting in the <code>_config.yml</code>file? In fact, by doing so, we’re only partially done with the github setup. When we run <code>hexo deploy</code>, we’re only pusing the generated static files in the <code>public</code> directory. Thus, we still have to do the git commands on our own should you wish to have them all on your github repo.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error:  Logging at level: debug Configuration file: /github/workspace/./_config.yml Theme: next github-pages 231 | Error: The next theme could not be found. </span><br></pre></td></tr></table></figure>
+
+
 <hr>
 
     </div>
