@@ -5,7 +5,6 @@ tags:
 ---
 
 As an aspiring software engineer, I believe it's crucial to have my own personal website to showcase my projects.
-
 <!-- more -->
 However, every time I sat down to start building it, I got distracted by the many features I wanted to include. After reading a book called "Atomic Habits"—which I believe many people have heard of—I decided to start with a smaller goal. I came across a few tutorials on building a blog with a simple tool called "Hexo", and it seemed like a good starting point. Hexo is really simple to set up, and I'll cover a few common problems you might encounter, along with some helpful tips.
 
@@ -22,6 +21,12 @@ Also, yes, it's safe to run this command at any time, and it won't accidentally 
 
 
 ### 3. Finishing up the github setup
-If you follow the tutorials, you should be able to have the basic funtions of your hexo site working, which is publishing posts and updating them. However, you might have noticed that not all your files are being pushed to your github repo. Why is that the case? Didn't we create a github repo and update the deployment setting in the `_config.yml`file? In fact, by doing so, we're only partially done with the github setup. When we run `hexo deploy`, we're only pusing the generated static files in the `public` directory. Thus, we still have to do the git commands on our own should you wish to have them all on your github repo. 
+If you follow the tutorials, you should be able to have the basic funtions of your hexo site working, which is publishing posts and updating them. However, you might have noticed that not all your files are being pushed to your github repo. Why is that the case? Didn't we create a github repo and update the deployment setting in the `_config.yml`file? In fact, by doing so, we're only partially done with the github setup. When we run `hexo deploy`, we're only pusing the generated static files in the `public` directory. Thus, we still have to do the git commands on our own should you wish to have them all on your github repo.
+
+
+{% codeblock %}
+Error:  Logging at level: debug Configuration file: /github/workspace/./_config.yml Theme: next github-pages 231 | Error: The next theme could not be found. 
+{% endcodeblock %}
+
 
 ---
