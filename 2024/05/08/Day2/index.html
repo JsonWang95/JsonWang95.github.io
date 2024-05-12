@@ -20,28 +20,34 @@
     var CONFIG = {"hostname":"jsonwang95.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jason&#39;s Blog">
-<meta property="og:url" content="http://jsonwang95.github.io/index.html">
+  <meta name="description" content="206. Reverse Linked List Understanding linked list data structureBefore we solve the problem, I think it’s important to understand the data structure of a linked list. As stated in the question, we’re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day2">
+<meta property="og:url" content="http://jsonwang95.github.io/2024/05/08/Day2/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="206. Reverse Linked List Understanding linked list data structureBefore we solve the problem, I think it’s important to understand the data structure of a linked list. As stated in the question, we’re">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jsonwang95.github.io/2024/05/08/Day2/Leetcode206.png">
+<meta property="article:published_time" content="2024-05-09T03:44:37.000Z">
+<meta property="article:modified_time" content="2024-05-12T07:03:26.862Z">
 <meta property="article:author" content="Jason Wang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jsonwang95.github.io/2024/05/08/Day2/Leetcode206.png">
 
-<link rel="canonical" href="http://jsonwang95.github.io/">
+<link rel="canonical" href="http://jsonwang95.github.io/2024/05/08/Day2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Jason's Blog</title>
+  <title>Day2 | Jason's Blog</title>
   
 
 
@@ -145,9 +151,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -163,10 +170,9 @@
       <meta itemprop="name" content="Jason's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/08/Day2/" class="post-title-link" itemprop="url">Day2</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Day2
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -196,171 +202,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="206-Reverse-Linked-List"><a href="#206-Reverse-Linked-List" class="headerlink" title="206. Reverse Linked List"></a>206. Reverse Linked List</h3><p><img src="/2024/05/08/Day2/Leetcode206.png" alt="Alt Text" title="Problem 206"></p>
+        <h3 id="206-Reverse-Linked-List"><a href="#206-Reverse-Linked-List" class="headerlink" title="206. Reverse Linked List"></a>206. Reverse Linked List</h3><p><img src="/2024/05/08/Day2/Leetcode206.png" alt="Alt Text" title="Problem 206"></p>
 <h3 id="Understanding-linked-list-data-structure"><a href="#Understanding-linked-list-data-structure" class="headerlink" title="Understanding linked list data structure"></a>Understanding linked list data structure</h3><p>Before we solve the problem, I think it’s important to understand the data structure of a linked list. As stated in the question, we’re working with a singly linked list, meaning that each node has a pointer that points to the next node. Thus, if you have access to the head node, you have access to the entire linked list. One more thing to note is that the last node of a linked list will be pointing to null.</p>
 <h3 id="Doing-a-small-trick-to-reverse-the-linked-list"><a href="#Doing-a-small-trick-to-reverse-the-linked-list" class="headerlink" title="Doing a small trick to reverse the linked list"></a>Doing a small trick to reverse the linked list</h3><p>Here’s what we’re gonna do. We’ll look at two nodes at a time, and we’ll reverse the direction of the pointer. However, to be able to do that we’re gonna need an extra pointer to point at the next node. Now, if you take a look at the example up there, when we reverse the pointer that goes from node 1 to node 2, you lose access to node 2, which is why we need an extra pointer to store that.</p>
 <p>Now that we have everything we need, we can start to go through the linked list and reverse the pointers. We’ll mainly be working with three things: <code>prev</code>, <code>curr</code>, and <code>temp</code>. First, <code>prev</code> will be referencing to <code>null</code>, whose <code>next</code> will be pointing to the head of the linked list. <code>curr</code> will be referencing to the head, and <code>temp</code> will be referencing to <code>next</code> of <code>curr</code>.</p>
 <p>Here’s the order of the actual reversing step. First, we store <code>next</code> of the head at <code>temp</code>. We then make <code>next</code> of the head to be <code>prev</code>. At this point, the reverse is complete. We then move <code>prev</code> and <code>curr</code> to the next element in the linked list. We’ll continue to do this until <code>curr</code> becomes <code>null</code>, which means <code>prev</code> will be referencing to the original last node of the linked list. Finally, since we’ve reversed the entire linked list, the original last node has now become the new <code>head</code>. Thus, we can return <code>prev</code> and it will give us the answer.</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jsonwang95.github.io/2024/05/06/Day1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jason Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/06/Day1/" class="post-title-link" itemprop="url">One LeetCode A Day Until I Land A SWE Job - Day 1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-05-06 11:33:33" itemprop="dateCreated datePublished" datetime="2024-05-06T11:33:33-07:00">2024-05-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-07 11:11:30" itemprop="dateModified" datetime="2024-05-07T11:11:30-07:00">2024-05-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>I’ve been going on and off LeetCode over the past two years or so after I graduated from college. However, that’s not gonna get me anywhere.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/06/Day1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jsonwang95.github.io/2024/05/04/Test-Blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jason Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/04/Test-Blog/" class="post-title-link" itemprop="url">Setting Up A Personal Blog With Hexo (Small nuance problems you might run into)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-05-04 11:29:30" itemprop="dateCreated datePublished" datetime="2024-05-04T11:29:30-07:00">2024-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-05 17:57:38" itemprop="dateModified" datetime="2024-05-05T17:57:38-07:00">2024-05-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>As an aspiring software engineer, I believe it’s crucial to have my own personal website to showcase my projects.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/04/Test-Blog/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/05/06/Day1/" rel="prev" title="One LeetCode A Day Until I Land A SWE Job - Day 1">
+      <i class="fa fa-chevron-left"></i> One LeetCode A Day Until I Land A SWE Job - Day 1
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -413,6 +284,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#206-Reverse-Linked-List"><span class="nav-number">1.</span> <span class="nav-text">206. Reverse Linked List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-linked-list-data-structure"><span class="nav-number">2.</span> <span class="nav-text">Understanding linked list data structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doing-a-small-trick-to-reverse-the-linked-list"><span class="nav-number">3.</span> <span class="nav-text">Doing a small trick to reverse the linked list</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
