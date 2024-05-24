@@ -151,6 +151,72 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jsonwang95.github.io/2024/05/23/Day4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jason Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/23/Day4/" class="post-title-link" itemprop="url">Day4</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-05-23 23:39:38 / Modified: 23:45:31" itemprop="dateCreated datePublished" datetime="2024-05-23T23:39:38-07:00">2024-05-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="20-Valid-Palindrome"><a href="#20-Valid-Palindrome" class="headerlink" title="20. Valid Palindrome"></a>20. Valid Palindrome</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/23/Day4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://jsonwang95.github.io/2024/05/15/Day3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -174,10 +240,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-05-15 16:30:21 / Modified: 16:50:12" itemprop="dateCreated datePublished" datetime="2024-05-15T16:30:21-07:00">2024-05-15</time>
+              <time title="Created: 2024-05-15 16:30:21" itemprop="dateCreated datePublished" datetime="2024-05-15T16:30:21-07:00">2024-05-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-05-23 23:38:18" itemprop="dateModified" datetime="2024-05-23T23:38:18-07:00">2024-05-23</time>
+              </span>
 
           
 
@@ -190,10 +262,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="206-Invert-Binary-Tree"><a href="#206-Invert-Binary-Tree" class="headerlink" title="206. Invert Binary Tree"></a>206. Invert Binary Tree</h3><p><img src="/Day2/Leetcode226.png" alt="Alt Text" title="Problem 226"></p>
-<h3 id="Invert-with-recursion"><a href="#Invert-with-recursion" class="headerlink" title="Invert with recursion"></a>Invert with recursion</h3><p>To solve this problem, we’re going to use two concepts that are pretty common for leetcode quetions. First, we’re going to use recursion to go all the way down to the leaf nodes of the tree. Second, we’re going do the swapping by using <code>temp</code> to hold the node values temporarily.</p>
-<p>Here’s the pseudocode. We first define our base case; when the root node is null, we return. Next, we do the swapping. Finally, we call the recursive functions on both children of the root.</p>
-
+          <h3 id="206-Invert-Binary-Tree"><a href="#206-Invert-Binary-Tree" class="headerlink" title="206. Invert Binary Tree"></a>206. Invert Binary Tree</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/15/Day3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -243,7 +320,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-12 00:03:26" itemprop="dateModified" datetime="2024-05-12T00:03:26-07:00">2024-05-12</time>
+                <time title="Modified: 2024-05-17 17:34:52" itemprop="dateModified" datetime="2024-05-17T17:34:52-07:00">2024-05-17</time>
               </span>
 
           
@@ -257,12 +334,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="206-Reverse-Linked-List"><a href="#206-Reverse-Linked-List" class="headerlink" title="206. Reverse Linked List"></a>206. Reverse Linked List</h3><p><img src="/2024/05/08/Day2/Leetcode206.png" alt="Alt Text" title="Problem 206"></p>
-<h3 id="Understanding-linked-list-data-structure"><a href="#Understanding-linked-list-data-structure" class="headerlink" title="Understanding linked list data structure"></a>Understanding linked list data structure</h3><p>Before we solve the problem, I think it’s important to understand the data structure of a linked list. As stated in the question, we’re working with a singly linked list, meaning that each node has a pointer that points to the next node. Thus, if you have access to the head node, you have access to the entire linked list. One more thing to note is that the last node of a linked list will be pointing to null.</p>
-<h3 id="Doing-a-small-trick-to-reverse-the-linked-list"><a href="#Doing-a-small-trick-to-reverse-the-linked-list" class="headerlink" title="Doing a small trick to reverse the linked list"></a>Doing a small trick to reverse the linked list</h3><p>Here’s what we’re gonna do. We’ll look at two nodes at a time, and we’ll reverse the direction of the pointer. However, to be able to do that we’re gonna need an extra pointer to point at the next node. Now, if you take a look at the example up there, when we reverse the pointer that goes from node 1 to node 2, you lose access to node 2, which is why we need an extra pointer to store that.</p>
-<p>Now that we have everything we need, we can start to go through the linked list and reverse the pointers. We’ll mainly be working with three things: <code>prev</code>, <code>curr</code>, and <code>temp</code>. First, <code>prev</code> will be referencing to <code>null</code>, whose <code>next</code> will be pointing to the head of the linked list. <code>curr</code> will be referencing to the head, and <code>temp</code> will be referencing to <code>next</code> of <code>curr</code>.</p>
-<p>Here’s the order of the actual reversing step. First, we store <code>next</code> of the head at <code>temp</code>. We then make <code>next</code> of the head to be <code>prev</code>. At this point, the reverse is complete. We then move <code>prev</code> and <code>curr</code> to the next element in the linked list. We’ll continue to do this until <code>curr</code> becomes <code>null</code>, which means <code>prev</code> will be referencing to the original last node of the linked list. Finally, since we’ve reversed the entire linked list, the original last node has now become the new <code>head</code>. Thus, we can return <code>prev</code> and it will give us the answer.</p>
-
+          <h3 id="206-Reverse-Linked-List"><a href="#206-Reverse-Linked-List" class="headerlink" title="206. Reverse Linked List"></a>206. Reverse Linked List</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/08/Day2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -487,7 +567,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
