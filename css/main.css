@@ -1515,6 +1515,7 @@ pre .javascript .function {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  text-align: center;
 }
 @media (min-width: 1200px) {
   .post-body {
