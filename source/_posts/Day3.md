@@ -3,7 +3,7 @@ title: Day3
 date: 2024-05-15 16:30:21
 tags:
 ---
-### 206. Invert Binary Tree
+### 226. Invert Binary Tree
 <!-- more -->
 ![Alt Text](/assets/Leetcode226.png "Problem 226")
 
