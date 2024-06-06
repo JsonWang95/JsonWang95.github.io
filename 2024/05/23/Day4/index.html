@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://jsonwang95.github.io/assets/Leetcode20.png">
 <meta property="article:published_time" content="2024-05-24T06:39:38.000Z">
-<meta property="article:modified_time" content="2024-06-02T19:02:49.651Z">
+<meta property="article:modified_time" content="2024-06-06T03:58:26.407Z">
 <meta property="article:author" content="Jason Wang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://jsonwang95.github.io/assets/Leetcode20.png">
@@ -188,7 +188,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-06-02 12:02:49" itemprop="dateModified" datetime="2024-06-02T12:02:49-07:00">2024-06-02</time>
+                <time title="Modified: 2024-06-05 20:58:26" itemprop="dateModified" datetime="2024-06-05T20:58:26-07:00">2024-06-05</time>
               </span>
 
           
@@ -204,7 +204,10 @@
       
         <h3 id="20-Valid-Palindrome"><a href="#20-Valid-Palindrome" class="headerlink" title="20. Valid Palindrome"></a>20. Valid Palindrome</h3><span id="more"></span>
 <p><img src="/assets/Leetcode20.png" alt="Alt Text" title="Problem 20"></p>
-<h3 id="Stack-Data-Structure"><a href="#Stack-Data-Structure" class="headerlink" title="Stack Data Structure"></a>Stack Data Structure</h3><p>We’ll be using stack data structure for this problem. Stack is perfect for this problem because of its last-in-first-out property, as opposed to that of a heap. We will take a look at an example to see how stack is especially useful here.</p>
+<h3 id="Stack-Data-Structure"><a href="#Stack-Data-Structure" class="headerlink" title="Stack Data Structure"></a>Stack Data Structure</h3><p>We’ll be using stack data structure for this problem. Stack is perfect for this problem because of its last-in-first-out property, as opposed to that of a heap. We will take a look at an example to see how stack is especially useful here.<br>Say we’ve got an input <code>()[()]</code>. First, we want to have a way to know how the parentheses are paired up. That is, <code>(</code> should be matched with <code>)</code>. Thus, we can have a dictionary like this, <code>closeToOpen = &#123;&quot;)&quot; : &quot;(&quot;, &quot;]&quot; : &quot;[&quot;, &quot;&#125;&quot; : &quot;&#123;&quot;&#125;</code>. Note that we can also do <code>openToClose</code>, but it’s going to be a bit less intuitive when we  write out the solution.</p>
+<p>Now that we have the dictionary, we can iterate through the input array. We first check if the current character <code>c</code> is in the dictionray. If it is, it means it’s a closing bracket (when we do <code>if c in closeToOpen</code>, it’s checking for the keys in the dictionary, not the values.) We then check if the element on the top of our stack is the corresponding opening bracket. If they match, we pop out the top element; otherwise, we have an invalid pair and return false right away.</p>
+<p>If <code>c</code> is not in the dictionary, it means that it is a opening bracket, and we can simply add it to our stack.</p>
+<p>When I first attempted this question, I got stuck trying to think if there could be a case where we have a very complicated and nested pairs of parentheses. I thought that there might be a case where we missed some valid&#x2F;invalid paranthese. However, if you think about it, there centainly could be multiple nested parentheses, but each of those instances will still have the inner-most parentheses. Our solution can still ensure that we look at those inner-most pairs.</p>
 
     </div>
 
