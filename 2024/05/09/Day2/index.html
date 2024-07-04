@@ -19,19 +19,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"jsonwang95.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-  <meta name="description" content="As an aspiring software engineer, I believe it’s crucial to have my own personal website to showcase my projects.">
+  <meta name="description" content="206. Reverse Linked List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Setting Up A Personal Blog With Hexo (Small nuance problems you might run into)">
-<meta property="og:url" content="http://jsonwang95.github.io/2024/05/04/Test-Blog/index.html">
+<meta property="og:title" content="Day2">
+<meta property="og:url" content="http://jsonwang95.github.io/2024/05/09/Day2/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="As an aspiring software engineer, I believe it’s crucial to have my own personal website to showcase my projects.">
+<meta property="og:description" content="206. Reverse Linked List">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-04T18:29:30.000Z">
-<meta property="article:modified_time" content="2024-05-06T00:57:38.722Z">
+<meta property="og:image" content="http://jsonwang95.github.io/assets/Leetcode206.png">
+<meta property="article:published_time" content="2024-05-09T03:44:37.000Z">
+<meta property="article:modified_time" content="2024-06-02T18:59:34.105Z">
 <meta property="article:author" content="Jason Wang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jsonwang95.github.io/assets/Leetcode206.png">
 
-<link rel="canonical" href="http://jsonwang95.github.io/2024/05/04/Test-Blog/">
+<link rel="canonical" href="http://jsonwang95.github.io/2024/05/09/Day2/">
 
 
 <script id="page-configurations">
@@ -44,7 +46,7 @@
   };
 </script>
 
-  <title>Setting Up A Personal Blog With Hexo (Small nuance problems you might run into) | Jason's Blog</title>
+  <title>Day2 | Jason's Blog</title>
   
 
 
@@ -155,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://jsonwang95.github.io/2024/05/04/Test-Blog/">
+    <link itemprop="mainEntityOfPage" href="http://jsonwang95.github.io/2024/05/09/Day2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,7 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Setting Up A Personal Blog With Hexo (Small nuance problems you might run into)
+          Day2
         </h1>
 
         <div class="post-meta">
@@ -178,14 +180,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2024-05-04 11:29:30" itemprop="dateCreated datePublished" datetime="2024-05-04T11:29:30-07:00">2024-05-04</time>
+              <time title="Created: 2024-05-09 11:44:37" itemprop="dateCreated datePublished" datetime="2024-05-09T11:44:37+08:00">2024-05-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-05 17:57:38" itemprop="dateModified" datetime="2024-05-05T17:57:38-07:00">2024-05-05</time>
+                <time title="Modified: 2024-06-03 02:59:34" itemprop="dateModified" datetime="2024-06-03T02:59:34+08:00">2024-06-03</time>
               </span>
 
           
@@ -199,18 +201,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>As an aspiring software engineer, I believe it’s crucial to have my own personal website to showcase my projects.</p>
-<span id="more"></span>
-<p>However, every time I sat down to start building it, I got distracted by the many features I wanted to include. After reading a book called “Atomic Habits”—which I believe many people have heard of—I decided to start with a smaller goal. I came across a few tutorials on building a blog with a simple tool called “Hexo”, and it seemed like a good starting point. Hexo is really simple to set up, and I’ll cover a few common problems you might encounter, along with some helpful tips.</p>
-<h3 id="1-Deploying-Your-Website-to-GitHub"><a href="#1-Deploying-Your-Website-to-GitHub" class="headerlink" title="1. Deploying Your Website to GitHub"></a>1. Deploying Your Website to GitHub</h3><p>When deploying your website to GitHub, you need to modify the <code>_config.yml</code> file located in the root directory. You’ll need to specify the <code>type</code>, <code>repo</code>, and <code>branch</code>. Most tutorials suggest setting the <code>branch</code> to “master”. However, this can lead to issues because GitHub has changed the default branch name to “main”. If you set the <code>branch</code> to “master”, you might find that your Hexo files are not being pushed to the main branch, which means your updates won’t appear on your website. While the topic of branches is extensive, for our purposes, there isn’t much difference between the “main” and “master” branches.</p>
-<p><strong>TL;DR:</strong><br>Ensure you set the <code>branch</code> to “main” to avoid any issues.</p>
-<h3 id="2-Understanding-the-hexo-clean-Command"><a href="#2-Understanding-the-hexo-clean-Command" class="headerlink" title="2. Understanding the hexo clean Command"></a>2. Understanding the <code>hexo clean</code> Command</h3><p>The tutorials often mention the command <code>hexo clean</code>, explaining only that it clears all cache and the static pages that were generated. This explanation was confusing to me at first. Essentially, <code>hexo clean</code> is a command that resets and cleans up your development environment. Think of it this way: most people use Hexo to build a blog, right? During the building process, every time you open a file, Hexo creates several other files under the hood. If you decide to delete some older posts, the related files might still linger. Here’s where <code>hexo clean</code> becomes useful—it’s considered good practice to run it before posting something new to keep your project tidy and organized.</p>
-<p>Also, yes, it’s safe to run this command at any time, and it won’t accidentally delete any of your posts.</p>
-<h3 id="3-Finishing-up-the-github-setup"><a href="#3-Finishing-up-the-github-setup" class="headerlink" title="3. Finishing up the github setup"></a>3. Finishing up the github setup</h3><p>If you follow the tutorials, you should be able to have the basic funtions of your hexo site working, which is publishing posts and updating them. However, you might have noticed that not all your files are being pushed to your github repo. Why is that the case? Didn’t we create a github repo and update the deployment setting in the <code>_config.yml</code>file? In fact, by doing so, we’re only partially done with the github setup. When we run <code>hexo deploy</code>, we’re only pusing the generated static files in the <code>public</code> directory. Thus, we still have to do the git commands on our own should you wish to have them all on your github repo.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error:  Logging at level: debug Configuration file: /github/workspace/./_config.yml Theme: next github-pages 231 | Error: The next theme could not be found. </span><br></pre></td></tr></table></figure>
-
-
-<hr>
+        <h3 id="206-Reverse-Linked-List"><a href="#206-Reverse-Linked-List" class="headerlink" title="206. Reverse Linked List"></a>206. Reverse Linked List</h3><span id="more"></span>
+<p><img src="/assets/Leetcode206.png" alt="Alt Text" title="Problem 206"></p>
+<h3 id="Understanding-linked-list-data-structure"><a href="#Understanding-linked-list-data-structure" class="headerlink" title="Understanding linked list data structure"></a>Understanding linked list data structure</h3><p>Before we solve the problem, I think it’s important to understand the data structure of a linked list. As stated in the question, we’re working with a singly linked list, meaning that each node has a pointer that points to the next node. Thus, if you have access to the head node, you have access to the entire linked list. One more thing to note is that the last node of a linked list will be pointing to null.</p>
+<h3 id="Doing-a-small-trick-to-reverse-the-linked-list"><a href="#Doing-a-small-trick-to-reverse-the-linked-list" class="headerlink" title="Doing a small trick to reverse the linked list"></a>Doing a small trick to reverse the linked list</h3><p>Here’s what we’re gonna do. We’ll look at two nodes at a time, and we’ll reverse the direction of the pointer. However, to be able to do that we’re gonna need an extra pointer to point at the next node. Now, if you take a look at the example up there, when we reverse the pointer that goes from node 1 to node 2, you lose access to node 2, which is why we need an extra pointer to store that.</p>
+<p>Now that we have everything we need, we can start to go through the linked list and reverse the pointers. We’ll mainly be working with three things: <code>prev</code>, <code>curr</code>, and <code>temp</code>. First, <code>prev</code> will be referencing to <code>null</code>, whose <code>next</code> will be pointing to the head of the linked list. <code>curr</code> will be referencing to the head, and <code>temp</code> will be referencing to <code>next</code> of <code>curr</code>.</p>
+<p>Here’s the order of the actual reversing step. First, we store <code>next</code> of the head at <code>temp</code>. We then make <code>next</code> of the head to be <code>prev</code>. At this point, the reverse is complete. We then move <code>prev</code> and <code>curr</code> to the next element in the linked list. We’ll continue to do this until <code>curr</code> becomes <code>null</code>, which means <code>prev</code> will be referencing to the original last node of the linked list. Finally, since we’ve reversed the entire linked list, the original last node has now become the new <code>head</code>. Thus, we can return <code>prev</code> and it will give us the answer.</p>
 
     </div>
 
@@ -225,10 +221,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2024/05/06/Day1/" rel="next" title="Documenting LeetCode Problems I Solved">
-      Documenting LeetCode Problems I Solved <i class="fa fa-chevron-right"></i>
+    <a href="/2024/05/07/Day1/" rel="prev" title="Documenting LeetCode Problems I Solved">
+      <i class="fa fa-chevron-left"></i> Documenting LeetCode Problems I Solved
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/05/16/Day3/" rel="next" title="Day3">
+      Day3 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -288,7 +287,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Deploying-Your-Website-to-GitHub"><span class="nav-number">1.</span> <span class="nav-text">1. Deploying Your Website to GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Understanding-the-hexo-clean-Command"><span class="nav-number">2.</span> <span class="nav-text">2. Understanding the hexo clean Command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Finishing-up-the-github-setup"><span class="nav-number">3.</span> <span class="nav-text">3. Finishing up the github setup</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#206-Reverse-Linked-List"><span class="nav-number">1.</span> <span class="nav-text">206. Reverse Linked List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-linked-list-data-structure"><span class="nav-number">2.</span> <span class="nav-text">Understanding linked list data structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doing-a-small-trick-to-reverse-the-linked-list"><span class="nav-number">3.</span> <span class="nav-text">Doing a small trick to reverse the linked list</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -302,7 +301,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
