@@ -1516,6 +1516,11 @@ pre .javascript .function {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
+.post-body h3 {
+  text-align: center;
+}
+
 @media (min-width: 1200px) {
   .post-body {
     font-size: 1.125em;
